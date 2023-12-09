@@ -3,7 +3,7 @@
 
 ---
 
-用到的变量
+  用到的变量
   |变量名|是否必须|备注|
   |---|---|---|
   |CONFIG_JSON|是|[参考示例](https://github.com/pandora-next/deploy#config-%E9%85%8D%E7%BD%AE)|
