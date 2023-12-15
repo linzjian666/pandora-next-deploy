@@ -8,3 +8,42 @@
   |---|---|
   |CONFIG_JSON|是|
   |TOKENS_JSON|否|
+
+### 以下是一个`CONFIG_JSON`的示例
+```json
+{
+  "bind": "0.0.0.0:8181", //如无必要,请勿改动此行
+  "tls": {
+    "enabled": false,
+    "cert_file": "",
+    "key_file": ""
+  },
+  "timeout": 600,
+  "proxy_url": "",
+  "license_id": "",
+  "public_share": false,
+  "site_password": "",
+  "setup_password": "",
+  "server_tokens": true,
+  "proxy_api_prefix": "",
+  "isolated_conv_title": "*",
+  "disable_signup": false,
+  "auto_conv_arkose": false,
+  "proxy_file_service": false,
+  "custom_doh_host": "",
+  "captcha": {
+    "provider": "",
+    "site_key": "",
+    "site_secret": "",
+    "site_login": false,
+    "setup_login": false,
+    "oai_username": false,
+    "oai_password": false,
+    "oai_signup": false
+  },
+  "whitelist": null
+}
+```
+  * 详细说明[参见此处](https://github.com/pandora-next/deploy/?tab=readme-ov-file#config-%E9%85%8D%E7%BD%AE)
+
+### `CONFIG_JSON` [参见此处](https://github.com/pandora-next/deploy/?tab=readme-ov-file#tokens-%E9%85%8D%E7%BD%AE)
