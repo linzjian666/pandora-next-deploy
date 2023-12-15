@@ -46,4 +46,4 @@
 ```
   * 详细说明[参见此处](https://github.com/pandora-next/deploy/?tab=readme-ov-file#config-%E9%85%8D%E7%BD%AE)
 
-### `CONFIG_JSON` [参见此处](https://github.com/pandora-next/deploy/?tab=readme-ov-file#tokens-%E9%85%8D%E7%BD%AE)
+### `TOKENS_JSON` [参见此处](https://github.com/pandora-next/deploy/?tab=readme-ov-file#tokens-%E9%85%8D%E7%BD%AE)
