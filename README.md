@@ -1,5 +1,5 @@
 # pandora-next-deploy
-利用 Dockerfile 在 HuggingFace 等平台上部署 Pandora-Next
+利用 Dockerfile 在 🤗HuggingFace 等平台上部署 Pandora-Next
 
 点击部署至HuggingFace👉[![Deploy to HuggingFace](https://img.shields.io/badge/%E7%82%B9%E5%87%BB%E9%83%A8%E7%BD%B2-%F0%9F%A4%97-fff)](https://huggingface.co/login?next=%2Fspaces%2Flinzjian666%2FPandoraNext%3Fduplicate%3Dtrue%26visibility%3Dpublic)
 
