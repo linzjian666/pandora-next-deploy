@@ -6,8 +6,8 @@
 ## 用到的变量
   |变量名|是否必须|
   |---|---|
-  |CONFIG_JSON|是|
-  |TOKENS_JSON|否|
+  |CONFIG_JSON|  是|
+  |TOKENS_JSON|  否|
 
 ### 以下是一个`CONFIG_JSON`的示例
 ```json
