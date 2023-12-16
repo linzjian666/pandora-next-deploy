@@ -1,16 +1,17 @@
-# Use the base image
+# 使用基础镜像
 FROM golang:alpine AS builder
 
-# Install necessary tools
+# 安装必要的工具
 RUN apk update && apk add --no-cache \
     curl \
     tar  \
     jq
 
-# Create a new working directory
+# 创建新的工作目录
 WORKDIR /app
 
-# Download and extract files, and give all users read, write, and execute permissions
+
+# 下载并解压文件，并给予所有用户读写和执行权限
 RUN version=$(basename $(curl -sL -o /dev/null -w %{url_effective} https://github.com/pandora-next/deploy/releases/latest)) \
     && base_url="https://github.com/pandora-next/deploy/releases/expanded_assets/$version" \
     && latest_url="https://github.com/$(curl -sL $base_url | grep "href.*amd64.*\.tar.gz" | sed 's/.*href="//' | sed 's/".*//')" \
@@ -19,7 +20,7 @@ RUN version=$(basename $(curl -sL -o /dev/null -w %{url_effective} https://githu
     && rm PandoraNext.tar.gz \
     && chmod 777 -R .
 
-# Get tokens.json
+# 获取tokens.json
 RUN --mount=type=secret,id=TOKENS_JSON,dst=/etc/secrets/TOKENS_JSON \
     if [ -f /etc/secrets/TOKENS_JSON ]; then \
     cat /etc/secrets/TOKENS_JSON > tokens.json \
@@ -28,19 +29,18 @@ RUN --mount=type=secret,id=TOKENS_JSON,dst=/etc/secrets/TOKENS_JSON \
     echo "TOKENS_JSON not found, skipping"; \
     fi
 
-# Get config.json
+# 获取config.json
 RUN --mount=type=secret,id=CONFIG_JSON,dst=/etc/secrets/CONFIG_JSON \
     cat /etc/secrets/CONFIG_JSON > config.json && chmod 777 config.json
 
-# Modify the execution permissions of PandoraNext
+# 修改PandoraNext的执行权限
 RUN chmod 777 ./PandoraNext
 
-# Create a global cache directory and provide the most lenient permissions
+# 创建全局缓存目录并提供最宽松的权限
 RUN mkdir /.cache && chmod 777 /.cache
 
-# Open port
+# 开放端口
 EXPOSE 8181
 
-
-# Start command with a loop for automatic restart
-CMD ["sh", "-c", "while true; do ./PandoraNext; sleep 180; done"]
+# 启动命令
+CMD ["./PandoraNext"]
