@@ -40,7 +40,7 @@ RUN chmod 777 ./PandoraNext
 RUN mkdir /.cache && chmod 777 /.cache
 
 # 开放端口
-EXPOSE 8181
+EXPOSE 7860
 
 # 启动命令
 CMD ["./PandoraNext"]
